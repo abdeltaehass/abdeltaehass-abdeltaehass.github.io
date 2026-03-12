@@ -1,0 +1,96 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.folderIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+}
+
+.cardLinks {
+  display: flex;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.cardLinks a {
+  transition: color 0.2s;
+}
+
+.cardLinks a:hover {
+  color: var(--accent);
+}
+
+.projectName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.projectDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.moreLink {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.moreLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
