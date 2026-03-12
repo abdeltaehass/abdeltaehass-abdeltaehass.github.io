@@ -20,7 +20,7 @@ const projects = [
     description: 'A web platform that helps government contractors stay organized — tracking contracts, deadlines, and documentation in one place.',
     tags: ['Python', 'HTML', 'CSS'],
     github: 'https://github.com/abdeltaehass/GovCon',
-    live: null,
+    live: 'https://abdeltaehass.pythonanywhere.com/bids',
   },
   {
     name: 'Fajr — Islamic Prayer App',
