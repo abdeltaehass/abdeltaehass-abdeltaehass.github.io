@@ -2,6 +2,13 @@ import styles from './Projects.module.css'
 
 const projects = [
   {
+    name: 'S.A.I.N.T.',
+    description: 'Network Intrusion Detection System with an AI agent reasoning engine for threat detection — 89% accuracy on NSL-KDD (125K+ samples). Low-latency inference via Flask + Redis + Plotly, processing 50–100 connections/sec with an interactive agent-in-the-loop dashboard.',
+    tags: ['Python', 'PyTorch', 'Flask', 'Redis', 'Plotly'],
+    github: 'https://github.com/abdeltaehass/S.A.I.N.T.',
+    live: null,
+  },
+  {
     name: 'StockPulse',
     description: 'A short description of what this project does and what problem it solves.',
     tags: ['Python', 'HTML', 'C'],
