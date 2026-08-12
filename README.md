@@ -1,4 +1,4 @@
-# Abdel Rahman Taeha — Personal Website
+# Abdelrahman Taeha — Personal Portfolio
 
 My personal website.
 
