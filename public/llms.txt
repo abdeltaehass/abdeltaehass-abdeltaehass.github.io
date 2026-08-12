@@ -33,7 +33,7 @@ Portfolio: https://abdelrahmantaeha.com/
 - **PingVault — Network Observability Agent**: Production-grade network monitoring across ICMP, SNMP, TCP/UDP with agent-based metrics collection, Alembic migrations, and a real-time HTML observability dashboard. https://github.com/abdeltaehass/PingVault
 - **AutoApply**: Full-stack job-application toolkit. Scrapes CalCareers (and external boards), calls the Claude API to generate tailored resumes, cover letters, and SOQs per posting, scores fit on a 0–100 scale. https://github.com/abdeltaehass/AutoApply
 - **GovCon**: Web platform for government contractors to track contracts, deadlines, and documentation. https://abdeltaehass.pythonanywhere.com/bids
-- **Al-Manar (iOS)**: Islamic companion app with prayer times, Quran with 7 reciters, and masjid finder. https://apps.apple.com/us/app/al-manar/id6759625182
+- **Al-Manar (Production iOS App)**: Shipped to the App Store with Flutter/Dart, owning the full lifecycle from UI/UX through automated distribution via Xcode Cloud CI/CD. Custom background audio framework extending BaseAudioHandler with system-level media controls and optimized memory handling; Google Places API + Haversine geospatial calculations for GPS-accurate prayer times, localized across 9 languages. https://apps.apple.com/us/app/al-manar/id6759625182
 
 ## Skills
 

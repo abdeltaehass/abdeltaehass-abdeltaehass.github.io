@@ -54,9 +54,9 @@ const projects = [
     live: 'https://abdeltaehass.pythonanywhere.com/bids',
   },
   {
-    name: 'Al-Manar — Islamic Prayer App',
-    description: 'Full-featured Islamic companion app with GPS-based prayer times, offline caching, Qibla compass, full Quran with 7 reciters and audio playback, daily hadith, athkar, nearby masjid finder, and 7 customizable color themes.',
-    tags: ['Flutter', 'Dart', 'Google Places API', 'just_audio'],
+    name: 'Al-Manar — Production iOS App',
+    description: 'Shipped a production iOS application to the App Store, owning the full software lifecycle from UI/UX design through automated distribution via Xcode Cloud CI/CD. Built a custom background audio framework extending BaseAudioHandler for uninterrupted playback with system-level media controls, persistent state, and optimized memory handling across long sessions. Integrated the Google Places API with Haversine geospatial calculations to deliver GPS-accurate prayer times and nearby masjid discovery, localized for a global user base across 9 languages.',
+    tags: ['Flutter', 'Dart', 'iOS', 'Xcode Cloud', 'Google Places API', 'CI/CD'],
     github: 'https://github.com/abdeltaehass/Fajr',
     live: 'https://apps.apple.com/us/app/al-manar/id6759625182',
   },
