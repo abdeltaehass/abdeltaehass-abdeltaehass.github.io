@@ -19,6 +19,13 @@ const projects = [
     live: null,
   },
   {
+    name: 'Al-Manar — Production iOS App',
+    description: 'Shipped a production iOS application to the App Store, owning the full software lifecycle from UI/UX design through automated distribution via Xcode Cloud CI/CD. Built a custom background audio framework extending BaseAudioHandler for uninterrupted playback with system-level media controls, persistent state, and optimized memory handling across long sessions. Integrated the Google Places API with Haversine geospatial calculations to deliver GPS-accurate prayer times and nearby masjid discovery, localized for a global user base across 9 languages.',
+    tags: ['Flutter', 'Dart', 'iOS', 'Xcode Cloud', 'Google Places API', 'CI/CD'],
+    github: 'https://github.com/abdeltaehass/Fajr',
+    live: 'https://apps.apple.com/us/app/al-manar/id6759625182',
+  },
+  {
     name: 'AutoApply',
     description: 'Full-stack job-application toolkit that scrapes CalCareers (and external boards), calls the Claude API to generate tailored resumes, cover letters, and SOQs per posting, scores fit on a 0–100 scale, and tracks every application through a local web dashboard — with a human-in-the-loop review step.',
     tags: ['Python', 'Claude API', 'Web Scraping', 'Flask'],
@@ -52,13 +59,6 @@ const projects = [
     tags: ['Python', 'HTML', 'CSS'],
     github: 'https://github.com/abdeltaehass/GovCon',
     live: 'https://abdeltaehass.pythonanywhere.com/bids',
-  },
-  {
-    name: 'Al-Manar — Production iOS App',
-    description: 'Shipped a production iOS application to the App Store, owning the full software lifecycle from UI/UX design through automated distribution via Xcode Cloud CI/CD. Built a custom background audio framework extending BaseAudioHandler for uninterrupted playback with system-level media controls, persistent state, and optimized memory handling across long sessions. Integrated the Google Places API with Haversine geospatial calculations to deliver GPS-accurate prayer times and nearby masjid discovery, localized for a global user base across 9 languages.',
-    tags: ['Flutter', 'Dart', 'iOS', 'Xcode Cloud', 'Google Places API', 'CI/CD'],
-    github: 'https://github.com/abdeltaehass/Fajr',
-    live: 'https://apps.apple.com/us/app/al-manar/id6759625182',
   },
 ]
 
