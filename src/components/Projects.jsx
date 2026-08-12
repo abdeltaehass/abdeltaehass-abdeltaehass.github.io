@@ -12,18 +12,18 @@ const projects = [
     live: null,
   },
   {
-    name: 'SENTRY — Vision-Language Incident Report Generator',
-    description: 'End-to-end vision-language system that generates security-incident reports from camera frames, pairing a CLIP-style image encoder with a LoRA-fine-tuned language model to adapt an open pretrained model efficiently rather than training from scratch. Quantified and mitigated hallucination by measuring a hallucination rate against a manually reviewed set, then flagging low-confidence or ungrounded claims. Engineered per-sentence Grad-CAM-style grounding that visualizes exactly which pixels the model attended to for each generated claim — shipped as a live, interactive demo on Hugging Face Spaces.',
-    tags: ['Python', 'PyTorch', 'CLIP', 'LoRA', 'Hugging Face', 'Grad-CAM'],
-    github: 'https://github.com/abdeltaehass/SENTRY',
-    live: null,
-  },
-  {
     name: 'Al-Manar — Production iOS App',
     description: 'Shipped a production iOS application to the App Store, owning the full software lifecycle from UI/UX design through automated distribution via Xcode Cloud CI/CD. Built a custom background audio framework extending BaseAudioHandler for uninterrupted playback with system-level media controls, persistent state, and optimized memory handling across long sessions. Integrated the Google Places API with Haversine geospatial calculations to deliver GPS-accurate prayer times and nearby masjid discovery, localized for a global user base across 9 languages.',
     tags: ['Flutter', 'Dart', 'iOS', 'Xcode Cloud', 'Google Places API', 'CI/CD'],
     github: 'https://github.com/abdeltaehass/Fajr',
     live: 'https://apps.apple.com/us/app/al-manar/id6759625182',
+  },
+  {
+    name: 'SENTRY — Vision-Language Incident Report Generator',
+    description: 'End-to-end vision-language system that generates security-incident reports from camera frames, pairing a CLIP-style image encoder with a LoRA-fine-tuned language model to adapt an open pretrained model efficiently rather than training from scratch. Quantified and mitigated hallucination by measuring a hallucination rate against a manually reviewed set, then flagging low-confidence or ungrounded claims. Engineered per-sentence Grad-CAM-style grounding that visualizes exactly which pixels the model attended to for each generated claim — shipped as a live, interactive demo on Hugging Face Spaces.',
+    tags: ['Python', 'PyTorch', 'CLIP', 'LoRA', 'Hugging Face', 'Grad-CAM'],
+    github: 'https://github.com/abdeltaehass/SENTRY',
+    live: null,
   },
   {
     name: 'AutoApply',
