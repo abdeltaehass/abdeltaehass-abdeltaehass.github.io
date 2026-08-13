@@ -62,36 +62,6 @@ const projects = [
   },
 ]
 
-const contributions = [
-  {
-    project: 'Uber NullAway',
-    repo: 'uber/NullAway',
-    title: 'Migrate InitializationTests to addSourceLines',
-    description: 'Modernized Java test infrastructure in Uber\'s NullAway static-analysis framework, replacing deprecated test APIs with inline source fixtures while preserving full regression coverage across initialization-analysis tests.',
-    pr: 'https://github.com/uber/NullAway/pull/1694',
-    prNumber: '#1694',
-    status: 'Merged',
-  },
-]
-
-function ContributionRow({ item }) {
-  return (
-    <a
-      href={item.pr}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.contribRow}
-    >
-      <div className={styles.contribHeader}>
-        <span className={styles.contribRepo}>{item.repo}</span>
-        <span className={styles.contribStatus}>{item.status} {item.prNumber}</span>
-      </div>
-      <h4 className={styles.contribTitle}>{item.title}</h4>
-      <p className={styles.contribDesc}>{item.description}</p>
-    </a>
-  )
-}
-
 function ProjectCard({ project }) {
   const cardRef = useRef(null)
 
@@ -174,13 +144,6 @@ export default function Projects({ embedded = false }) {
       <div className={styles.grid}>
         {projects.map(p => <ProjectCard key={p.name} project={p} />)}
       </div>
-      <div className={styles.contribBlock}>
-        <h3 className={styles.contribHeading}>Open Source Contributions</h3>
-        <div className={styles.contribList}>
-          {contributions.map(c => <ContributionRow key={c.pr} item={c} />)}
-        </div>
-      </div>
-
       <div className={styles.more}>
         <a
           href="https://github.com/abdeltaehass"
