@@ -89,6 +89,85 @@
   border-radius: 6px;
 }
 
+/* Open Source Contributions */
+.contribBlock {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.contribHeading {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.contribList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contribRow {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.contribRow:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.contribHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.contribRepo {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.contribStatus {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #1a7f37;
+  background: #dafbe1;
+  border: 1px solid #b7ebc6;
+  padding: 2px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.contribTitle {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.contribDesc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
 .more {
   margin-top: 44px;
   text-align: center;

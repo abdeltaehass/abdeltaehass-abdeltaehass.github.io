@@ -35,6 +35,10 @@ Portfolio: https://abdelrahmantaeha.com/
 - **GovCon**: Web platform for government contractors to track contracts, deadlines, and documentation. https://abdeltaehass.pythonanywhere.com/bids
 - **Al-Manar (Production iOS App)**: Shipped to the App Store with Flutter/Dart, owning the full lifecycle from UI/UX through automated distribution via Xcode Cloud CI/CD. Custom background audio framework extending BaseAudioHandler with system-level media controls and optimized memory handling; Google Places API + Haversine geospatial calculations for GPS-accurate prayer times, localized across 9 languages. https://apps.apple.com/us/app/al-manar/id6759625182
 
+## Open Source Contributions
+
+- **Uber NullAway** (merged, PR #1694): Modernized Java test infrastructure in Uber's NullAway static-analysis framework, replacing deprecated test APIs with inline source fixtures while preserving full regression coverage across initialization-analysis tests. https://github.com/uber/NullAway/pull/1694
+
 ## Skills
 
 Python, JavaScript/React, Flutter/Dart, Swift, C/C++, Java, SQL · PyTorch, TensorFlow, LangChain, CrewAI · AWS, GCP, Docker, CI/CD · LLM evaluation, RAG, autonomous agents, counterfactual evaluation
