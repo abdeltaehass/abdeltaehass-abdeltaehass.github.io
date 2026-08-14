@@ -3,9 +3,19 @@ import styles from './OpenSource.module.css'
 
 const contributions = [
   {
+    repo: 'NVIDIA/cccl',
+    lang: 'CUDA C++ / Python',
+    title: '[libcu++] Improve cuda::mr::memory_resource debugger pretty-printers',
+    description: 'Enhanced GDB and LLDB pretty-printers for CUDA C++ memory resources with state-aware inspection, expanding debugger coverage from 3 to 12 cases across heap, in-situ, empty/reset/moved-from, synchronous, and aliased states. Validated all 12 CMake debugger scenarios against expected GDB and LLDB output across optimized test harnesses.',
+    pr: 'https://github.com/NVIDIA/cccl/pull/10790',
+    prNumber: '#10790',
+    status: 'Merged',
+  },
+  {
     repo: 'uber/NullAway',
+    lang: 'Java',
     title: 'Migrate InitializationTests to addSourceLines',
-    description: 'Modernized initialization-analysis tests in Uber\'s NullAway static-analysis framework by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage.',
+    description: 'Modernized initialization-analysis tests in Uber\'s NullAway static-analysis framework by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage. Consolidated shared Java test source into a reusable helper and removed obsolete deprecation suppression from the test class.',
     pr: 'https://github.com/uber/NullAway/pull/1694',
     prNumber: '#1694',
     status: 'Merged',
@@ -21,7 +31,10 @@ function ContributionRow({ item }) {
       className={styles.row}
     >
       <div className={styles.header}>
-        <span className={styles.repo}>{item.repo}</span>
+        <span className={styles.repo}>
+          {item.repo}
+          {item.lang && <span className={styles.lang}> · {item.lang}</span>}
+        </span>
         <span className={styles.status}>{item.status} {item.prNumber}</span>
       </div>
       <h3 className={styles.title}>{item.title}</h3>

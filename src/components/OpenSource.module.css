@@ -35,6 +35,10 @@
   letter-spacing: 0.02em;
 }
 
+.lang {
+  color: var(--text-subtle);
+}
+
 .status {
   font-family: var(--font-mono);
   font-size: 0.7rem;

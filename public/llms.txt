@@ -37,7 +37,8 @@ Portfolio: https://abdelrahmantaeha.com/
 
 ## Open Source Contributions
 
-- **Uber NullAway** (merged, PR #1694, Aug 2026): Modernized initialization-analysis tests by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage. https://github.com/uber/NullAway/pull/1694
+- **NVIDIA CCCL** (merged, PR #10790, Aug 2026 · CUDA C++ / Python): Enhanced GDB and LLDB pretty-printers for CUDA C++ memory resources with state-aware inspection, expanding debugger coverage from 3 to 12 cases across heap, in-situ, empty/reset/moved-from, synchronous, and aliased states. Validated all 12 CMake debugger scenarios against expected GDB and LLDB output. https://github.com/NVIDIA/cccl/pull/10790
+- **Uber NullAway** (merged, PR #1694, Aug 2026 · Java): Modernized initialization-analysis tests by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage. Consolidated shared Java test source into a reusable helper. https://github.com/uber/NullAway/pull/1694
 
 ## Skills
 

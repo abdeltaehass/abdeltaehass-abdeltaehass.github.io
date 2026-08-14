@@ -16,8 +16,9 @@ const jobs = [
     company: 'DHCS',
     period: 'May 2025 — Present',
     points: [
-      'Automated enterprise monitoring and reporting pipelines — reduced observability overhead 40% and cut MTTD for production incidents in half.',
-      'Built internal dashboards visualizing agent-driven operational metrics; lowered incident resolution time by 30% and improved alerting accuracy by 20%.',
+      'Streamlined production monitoring, log processing, and reporting workflows — reduced manual operational work 40% and cut mean time to detection 50%.',
+      'Reworked backend integration, validation, and alerting workflows, accelerating root-cause analysis 35% and reducing incident resolution time 30%.',
+      'Improved real-time alerting accuracy 20% through automated log-processing and operational telemetry pipelines.',
     ],
   },
   {
