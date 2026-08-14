@@ -16,7 +16,7 @@ Portfolio: https://abdelrahmantaeha.com/
 ## Research
 
 - **SpineFairBench** (Co-author, with Ahmed Taha and Muzzammil Ahmadzada):Paired counterfactual evaluation suite for auditing demographic sensitivity in spinal-radiology vision-language model (VLM) reports. Evaluates a frozen nine-model VLM panel across 7,996 source/counterfactual pairs (apparent age and sex edited under target-pathology preservation). Recommendation drift observed in all nine models; 443/450 stratified pairs (98.4%) passed blinded review by three board-certified radiologists. Paper: https://www.researchgate.net/publication/404620116 · Code: https://github.com/ahmedtaha100/SpineFairBench · Dataset: https://huggingface.co/datasets/ahmedtaha100/spinefairbench-artifacts
-- **MedInsider** (Contributor): FHIR-style evaluation suite measuring medical LLM agent integrity under institutional pressure across 840 paired-twin scenarios. Built evaluation and logging infrastructure including deterministic action tracking, auditing workflows, and reproducibility tooling.
+- **MedInsider** (Co-author): LLM-agent evaluation suite spanning 840 clinical scenarios (420 matched pairs), 5 regulatory failure families, and 8 incentive conditions, measuring whether medical LLM agents preserve decision integrity under institutional and financial pressure. Engineered deterministic simulated-EHR tooling, action logging, audit pipelines, and scoring across a 9-model evaluation panel.
 
 ## Experience
 
@@ -27,7 +27,7 @@ Portfolio: https://abdelrahmantaeha.com/
 ## Selected Projects
 
 - **APEX — Arrhythmia Pattern Explainer**: End-to-end ECG decision-support system classifying 71 diagnostic categories at 0.920 macro-AUROC on PTB-XL, served via FastAPI at 6 ms inference. Reliability layer with per-lead Grad-CAM grounding and four consistency/confidence checks; reduced Expected Calibration Error from 0.079 to 0.002 (97%) via per-label vector scaling, cutting spurious findings 93%. https://github.com/abdeltaehass/apex-arrhythmia-explainer
-- **SENTRY — Vision-Language Incident Report Generator**: End-to-end vision-language system generating security-incident reports from camera frames, pairing a CLIP-style image encoder with a LoRA-fine-tuned language model. Quantified and mitigated hallucination with per-sentence Grad-CAM grounding; live demo on Hugging Face Spaces. https://github.com/abdeltaehass/SENTRY
+- **SENTRY — Vision-Language Incident Report Generator**: LoRA-adapted vision-language reporting pipeline shipped as a production FastAPI service with Docker, API-key authentication, rate limiting, GitHub Actions CI/CD, and 143 passing tests. Evaluated 10,000 manually reviewed outputs and reduced ungrounded claims 35%. https://github.com/abdeltaehass/SENTRY
 - **S.A.I.N.T. — Network Intrusion Detection System**: AI agent reasoning engine reaching 89% accuracy on NSL-KDD (125K+ samples). 41 traffic-flow features classified in real time; Flask + Redis + Plotly low-latency inference at 50–100 connections/sec with an interactive agent-in-the-loop dashboard. https://github.com/abdeltaehass/S.A.I.N.T.
 - **StockPulse — Autonomous Stock & Crypto Monitoring Platform**: Full-stack autonomous trading monitor integrating Alpaca (equities) and Binance (crypto) with real-time crash detection, ML-based price prediction, and unified portfolio tracking. Multi-agent alert pipeline with Telegram notifications, 24/7 surveillance, Docker-containerized. https://github.com/abdeltaehass/stockpulse
 - **PingVault — Network Observability Agent**: Production-grade network monitoring across ICMP, SNMP, TCP/UDP with agent-based metrics collection, Alembic migrations, and a real-time HTML observability dashboard. https://github.com/abdeltaehass/PingVault
@@ -37,7 +37,7 @@ Portfolio: https://abdelrahmantaeha.com/
 
 ## Open Source Contributions
 
-- **Uber NullAway** (merged, PR #1694): Modernized Java test infrastructure in Uber's NullAway static-analysis framework, replacing deprecated test APIs with inline source fixtures while preserving full regression coverage across initialization-analysis tests. https://github.com/uber/NullAway/pull/1694
+- **Uber NullAway** (merged, PR #1694, Aug 2026): Modernized initialization-analysis tests by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage. https://github.com/uber/NullAway/pull/1694
 
 ## Skills
 

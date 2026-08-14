@@ -8,7 +8,7 @@ const jobs = [
     period: 'Aug 2025 — Present',
     points: [
       'Co-authored SpineFairBench, a counterfactual VLM evaluation suite auditing demographic bias across 7,996 paired spinal radiographs and a 9-model panel.',
-      'Owned end-to-end development of MedInsider, a FHIR-style evaluation suite testing whether medical LLM agents preserve decision integrity under institutional and financial pressure — 840 paired-twin scenarios across 5 regulatory failure families and 8 incentive conditions.',
+      'Co-authored MedInsider, an LLM-agent evaluation suite spanning 840 clinical scenarios (420 matched pairs), 5 regulatory failure families, and 8 incentive conditions — with deterministic simulated-EHR tooling, action logging, and audit pipelines across a 9-model panel.',
     ],
   },
   {

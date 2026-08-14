@@ -5,7 +5,7 @@ const contributions = [
   {
     repo: 'uber/NullAway',
     title: 'Migrate InitializationTests to addSourceLines',
-    description: 'Modernized Java test infrastructure in Uber\'s NullAway static-analysis framework, replacing deprecated test APIs with inline source fixtures while preserving full regression coverage across initialization-analysis tests.',
+    description: 'Modernized initialization-analysis tests in Uber\'s NullAway static-analysis framework by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage.',
     pr: 'https://github.com/uber/NullAway/pull/1694',
     prNumber: '#1694',
     status: 'Merged',

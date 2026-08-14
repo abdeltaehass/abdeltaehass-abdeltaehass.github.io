@@ -20,8 +20,8 @@ const projects = [
   },
   {
     name: 'SENTRY — Vision-Language Incident Report Generator',
-    description: 'End-to-end vision-language system that generates security-incident reports from camera frames, pairing a CLIP-style image encoder with a LoRA-fine-tuned language model to adapt an open pretrained model efficiently rather than training from scratch. Quantified and mitigated hallucination by measuring a hallucination rate against a manually reviewed set, then flagging low-confidence or ungrounded claims. Engineered per-sentence Grad-CAM-style grounding that visualizes exactly which pixels the model attended to for each generated claim — shipped as a live, interactive demo on Hugging Face Spaces.',
-    tags: ['Python', 'PyTorch', 'CLIP', 'LoRA', 'Hugging Face', 'Grad-CAM'],
+    description: 'LoRA-adapted vision-language reporting pipeline that generates security-incident reports from camera frames, shipped as a production FastAPI service with Docker, API-key authentication, rate limiting, GitHub Actions CI/CD, and 143 passing tests. Evaluated 10,000 manually reviewed outputs and reduced ungrounded claims by 35% through systematic hallucination measurement and reliability-focused iteration, with per-sentence Grad-CAM grounding that visualizes which pixels drove each generated claim.',
+    tags: ['Python', 'PyTorch', 'FastAPI', 'LoRA', 'Docker', 'CI/CD'],
     github: 'https://github.com/abdeltaehass/SENTRY',
     live: null,
   },
