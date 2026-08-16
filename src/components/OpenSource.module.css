@@ -19,48 +19,123 @@
   transform: translateY(-2px);
 }
 
+/* Header: merged badge + repo + date */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.mergedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: #8250df;
+  padding: 3px 10px;
+  border-radius: 100px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .repo {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
-.lang {
+.prNum {
   color: var(--text-subtle);
+  font-weight: 400;
 }
 
-.status {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: #1a7f37;
-  background: #dafbe1;
-  border: 1px solid #b7ebc6;
-  padding: 2px 9px;
-  border-radius: 100px;
+.date {
+  margin-left: auto;
+  font-size: 0.74rem;
+  color: var(--text-subtle);
   white-space: nowrap;
 }
 
 .title {
-  font-size: 0.98rem;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text);
-  letter-spacing: -0.01em;
-  line-height: 1.35;
+  letter-spacing: -0.005em;
+  line-height: 1.4;
 }
 
 .description {
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-top: 6px;
+  margin-top: 8px;
+}
+
+/* Diff stats row */
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.additions {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.deletions {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.diffBar {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.diffBlock {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.diffBlockAdd {
+  background: #1a7f37;
+}
+
+.diffBlockDel {
+  background: #cf222e;
+}
+
+.statMeta {
+  color: var(--text-subtle);
+}
+
+.lang {
+  margin-left: auto;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 2px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .date { margin-left: 0; width: 100%; }
+  .lang { margin-left: 0; }
 }
