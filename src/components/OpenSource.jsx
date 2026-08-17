@@ -10,10 +10,8 @@ const contributions = [
     description: 'Traced a latent bug in gVisor\'s metrics package where an invalid duration range produced a NaN histogram growth factor. Because NaN comparisons and float-to-int conversions are architecture-dependent, the constructor silently returned a malformed bucketer on ARM64 while correctly panicking elsewhere. Fixed by rejecting NaN parameters at construction and re-enabled the disabled pkg/metric test target across the unit and ARM64 suites.',
     pr: 'https://github.com/google/gvisor/pull/14138',
     prNumber: '#14138',
-    additions: 3,
-    deletions: 4,
     files: 4,
-    commits: 1,
+    touched: ['metric.go', 'metric_test.go', 'BUILD', 'Makefile'],
     merged: 'Aug 2026',
   },
   {
@@ -24,10 +22,8 @@ const contributions = [
     description: 'Diagnosed why `go get gvisor.dev/gvisor@latest` fails for standard Go consumers — master is a Bazel source tree where pkg/refs/refs_template.go declares a mixed package. Established that the project\'s synthetic go branch is the supported consumption path and documented branch selection in the README and SDK quickstart, validated against both the Bazel and go build toolchains.',
     pr: 'https://github.com/google/gvisor/pull/14144',
     prNumber: '#14144',
-    additions: 8,
-    deletions: 1,
     files: 2,
-    commits: 1,
+    touched: ['README.md', 'quickstart.md'],
     merged: 'Aug 2026',
   },
   {
@@ -121,12 +117,25 @@ function ContributionRow({ item }) {
       <p className={styles.description}>{item.description}</p>
 
       <div className={styles.stats}>
-        <span className={styles.additions}>+{item.additions.toLocaleString()}</span>
-        <span className={styles.deletions}>−{item.deletions.toLocaleString()}</span>
-        <DiffBar additions={item.additions} deletions={item.deletions} />
-        <span className={styles.statMeta}>
-          {item.files} files · {item.commits} commits
-        </span>
+        {item.touched ? (
+          <>
+            <span className={styles.statMeta}>{item.files} files</span>
+            <span className={styles.fileList}>
+              {item.touched.map(f => (
+                <span key={f} className={styles.file}>{f}</span>
+              ))}
+            </span>
+          </>
+        ) : (
+          <>
+            <span className={styles.additions}>+{item.additions.toLocaleString()}</span>
+            <span className={styles.deletions}>−{item.deletions.toLocaleString()}</span>
+            <DiffBar additions={item.additions} deletions={item.deletions} />
+            <span className={styles.statMeta}>
+              {item.files} files · {item.commits} commits
+            </span>
+          </>
+        )}
         <span className={styles.lang}>{item.lang}</span>
       </div>
     </a>
