@@ -5,13 +5,13 @@ import OpenSource from './OpenSource'
 import styles from './ExperienceProjects.module.css'
 
 const tabs = [
+  { key: 'opensource', label: 'Open Source' },
   { key: 'experience', label: 'Experience' },
   { key: 'projects', label: 'Projects' },
-  { key: 'opensource', label: 'Open Source' },
 ]
 
 export default function ExperienceProjects() {
-  const [subtab, setSubtab] = useState('experience')
+  const [subtab, setSubtab] = useState('opensource')
 
   return (
     <section id="work" className={styles.section}>

@@ -28,18 +28,25 @@
   margin-bottom: 10px;
 }
 
-.mergedBadge {
+.badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.72rem;
   font-weight: 500;
   color: #ffffff;
-  background: #8250df;
   padding: 3px 10px;
   border-radius: 100px;
   line-height: 1.4;
   white-space: nowrap;
+}
+
+.badgeMerged {
+  background: #8250df;
+}
+
+.badgeOpen {
+  background: #1f883d;
 }
 
 .repo {

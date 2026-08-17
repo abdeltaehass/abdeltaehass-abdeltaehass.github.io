@@ -3,6 +3,34 @@ import styles from './OpenSource.module.css'
 
 const contributions = [
   {
+    repo: 'google/gvisor',
+    lang: 'Go',
+    status: 'open',
+    title: 'metric: reject NaN bucketer parameters',
+    description: 'Traced a latent bug in gVisor\'s metrics package where an invalid duration range produced a NaN histogram growth factor. Because NaN comparisons and float-to-int conversions are architecture-dependent, the constructor silently returned a malformed bucketer on ARM64 while correctly panicking elsewhere. Fixed by rejecting NaN parameters at construction and re-enabled the disabled pkg/metric test target across the unit and ARM64 suites.',
+    pr: 'https://github.com/google/gvisor/pull/14138',
+    prNumber: '#14138',
+    additions: 3,
+    deletions: 4,
+    files: 4,
+    commits: 1,
+    merged: 'Aug 2026',
+  },
+  {
+    repo: 'google/gvisor',
+    lang: 'Go',
+    status: 'open',
+    title: 'docs: select go branch for Go consumers',
+    description: 'Diagnosed why `go get gvisor.dev/gvisor@latest` fails for standard Go consumers — master is a Bazel source tree where pkg/refs/refs_template.go declares a mixed package. Established that the project\'s synthetic go branch is the supported consumption path and documented branch selection in the README and SDK quickstart, validated against both the Bazel and go build toolchains.',
+    pr: 'https://github.com/google/gvisor/pull/14144',
+    prNumber: '#14144',
+    additions: 8,
+    deletions: 1,
+    files: 2,
+    commits: 1,
+    merged: 'Aug 2026',
+  },
+  {
     repo: 'NVIDIA/cccl',
     lang: 'CUDA C++ / Python',
     title: '[libcu++] Improve cuda::mr::memory_resource debugger pretty-printers',
@@ -38,6 +66,24 @@ function MergeIcon() {
   )
 }
 
+function PullRequestIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
+      <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z" />
+    </svg>
+  )
+}
+
+function StatusBadge({ status }) {
+  const isOpen = status === 'open'
+  return (
+    <span className={`${styles.badge} ${isOpen ? styles.badgeOpen : styles.badgeMerged}`}>
+      {isOpen ? <PullRequestIcon /> : <MergeIcon />}
+      {isOpen ? 'Open' : 'Merged'}
+    </span>
+  )
+}
+
 // Five-block diff bar, GitHub-style: green blocks proportional to additions.
 function DiffBar({ additions, deletions }) {
   const total = additions + deletions
@@ -63,10 +109,7 @@ function ContributionRow({ item }) {
       className={styles.row}
     >
       <div className={styles.header}>
-        <span className={styles.mergedBadge}>
-          <MergeIcon />
-          Merged
-        </span>
+        <StatusBadge status={item.status} />
         <span className={styles.repo}>
           {item.repo}
           <span className={styles.prNum}> {item.prNumber}</span>
