@@ -41,7 +41,7 @@ const contributions = [
     deletions: 30,
     files: 6,
     commits: 6,
-    merged: 'Aug 14, 2026',
+    merged: 'Aug 2026',
   },
   {
     repo: 'uber/NullAway',
@@ -54,7 +54,7 @@ const contributions = [
     deletions: 1049,
     files: 5,
     commits: 3,
-    merged: 'Aug 13, 2026',
+    merged: 'Aug 2026',
   },
 ]
 
