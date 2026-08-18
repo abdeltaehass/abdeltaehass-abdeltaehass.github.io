@@ -37,8 +37,7 @@ Portfolio: https://abdelrahmantaeha.com/
 
 ## Open Source Contributions
 
-- **Google gVisor** (open, PR #14138, Aug 2026 · Go): Fixed an ARM64-only bug in gVisor's metrics histogram bucketer where a NaN growth factor bypassed validation due to architecture-dependent NaN comparison and float-to-int conversion behavior; re-enabled the disabled pkg/metric test target across unit and ARM64 suites. https://github.com/google/gvisor/pull/14138
-- **Google gVisor** (open, PR #14144, Aug 2026 · Go): Diagnosed why `go get gvisor.dev/gvisor@latest` fails under standard Go tooling — master is a Bazel tree containing a mixed package — and documented the supported `go` branch in the README and SDK quickstart. https://github.com/google/gvisor/pull/14144
+- **Google gVisor** (approved, PR #14144, Aug 2026 · Go): Diagnosed why `go get gvisor.dev/gvisor@latest` fails under standard Go tooling — master is a Bazel tree containing a mixed package — and documented the supported `go` branch in the README and SDK quickstart. https://github.com/google/gvisor/pull/14144
 - **NVIDIA CCCL** (merged, PR #10790, Aug 2026 · CUDA C++ / Python): Enhanced GDB and LLDB pretty-printers for CUDA C++ memory resources with state-aware inspection, expanding debugger coverage from 3 to 12 cases across heap, in-situ, empty/reset/moved-from, synchronous, and aliased states. Validated all 12 CMake debugger scenarios against expected GDB and LLDB output. https://github.com/NVIDIA/cccl/pull/10790
 - **Uber NullAway** (merged, PR #1694, Aug 2026 · Java): Modernized initialization-analysis tests by replacing deprecated addSourceFile APIs with inline addSourceLines fixtures, removing 4 obsolete testdata files while preserving full regression coverage. Consolidated shared Java test source into a reusable helper. https://github.com/uber/NullAway/pull/1694
 

@@ -5,19 +5,7 @@ const contributions = [
   {
     repo: 'google/gvisor',
     lang: 'Go',
-    status: 'open',
-    title: 'metric: reject NaN bucketer parameters',
-    description: 'Traced a latent bug in gVisor\'s metrics package where an invalid duration range produced a NaN histogram growth factor. Because NaN comparisons and float-to-int conversions are architecture-dependent, the constructor silently returned a malformed bucketer on ARM64 while correctly panicking elsewhere. Fixed by rejecting NaN parameters at construction and re-enabled the disabled pkg/metric test target across the unit and ARM64 suites.',
-    pr: 'https://github.com/google/gvisor/pull/14138',
-    prNumber: '#14138',
-    files: 4,
-    touched: ['metric.go', 'metric_test.go', 'BUILD', 'Makefile'],
-    merged: 'Aug 2026',
-  },
-  {
-    repo: 'google/gvisor',
-    lang: 'Go',
-    status: 'open',
+    status: 'approved',
     title: 'docs: select go branch for Go consumers',
     description: 'Diagnosed why `go get gvisor.dev/gvisor@latest` fails for standard Go consumers — master is a Bazel source tree where pkg/refs/refs_template.go declares a mixed package. Established that the project\'s synthetic go branch is the supported consumption path and documented branch selection in the README and SDK quickstart, validated against both the Bazel and go build toolchains.',
     pr: 'https://github.com/google/gvisor/pull/14144',
@@ -70,12 +58,26 @@ function PullRequestIcon() {
   )
 }
 
-function StatusBadge({ status }) {
-  const isOpen = status === 'open'
+function CheckIcon() {
   return (
-    <span className={`${styles.badge} ${isOpen ? styles.badgeOpen : styles.badgeMerged}`}>
-      {isOpen ? <PullRequestIcon /> : <MergeIcon />}
-      {isOpen ? 'Open' : 'Merged'}
+    <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
+      <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16Zm3.78-9.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018L6.75 9.19 5.28 7.72a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l2 2a.75.75 0 0 0 1.06 0Z" />
+    </svg>
+  )
+}
+
+const STATUSES = {
+  merged: { label: 'Merged', icon: MergeIcon, cls: 'badgeMerged' },
+  approved: { label: 'Approved', icon: CheckIcon, cls: 'badgeApproved' },
+  open: { label: 'Open', icon: PullRequestIcon, cls: 'badgeOpen' },
+}
+
+function StatusBadge({ status = 'merged' }) {
+  const { label, icon: Icon, cls } = STATUSES[status] ?? STATUSES.merged
+  return (
+    <span className={`${styles.badge} ${styles[cls]}`}>
+      <Icon />
+      {label}
     </span>
   )
 }

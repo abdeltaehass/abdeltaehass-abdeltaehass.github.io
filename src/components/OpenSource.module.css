@@ -49,6 +49,10 @@
   background: #1f883d;
 }
 
+.badgeApproved {
+  background: #1f883d;
+}
+
 .repo {
   font-family: var(--font-mono);
   font-size: 0.8rem;
