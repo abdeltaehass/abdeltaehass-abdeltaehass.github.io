@@ -16,7 +16,7 @@ const papers = [
     dataset: 'https://huggingface.co/datasets/ahmedtaha100/spinefairbench-artifacts',
   },
   {
-    title: 'MedInsider: Evaluating Medical LLM Agent Integrity Under Institutional Pressure',
+    title: 'MedInsider: A Benchmark for Documentation Integrity in Medical LLM Agents Under Institutional Pressure',
     authors: [
       { name: 'Ahmed Taha' },
       { name: 'Abdelrahman Taeha', me: true },
@@ -24,7 +24,7 @@ const papers = [
     ],
     abstract: 'A FHIR-style evaluation suite measuring medical LLM agent integrity under institutional pressure across 840 paired-twin scenarios. Contributed evaluation and logging infrastructure for agent behavior analysis — deterministic action tracking, auditing workflows, and reproducibility tooling.',
     tags: ['LLM Agents', 'FHIR', 'Healthcare AI', 'Evaluation'],
-    paper: null,
+    paper: 'https://www.researchgate.net/publication/405798471_MedInsider_A_Benchmark_for_Documentation_Integrity_in_Medical_LLM_Agents_Under_Institutional_Pressure',
     code: null,
     dataset: null,
   },
