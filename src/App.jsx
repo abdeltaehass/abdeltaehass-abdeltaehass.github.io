@@ -3,8 +3,8 @@ import './index.css'
 import Sidebar from './components/Sidebar'
 import About from './components/About'
 import Education from './components/Education'
-import Research from './components/Research'
-import ExperienceProjects from './components/ExperienceProjects'
+import ProjectsPublications from './components/ProjectsPublications'
+import ExperienceOpenSource from './components/ExperienceOpenSource'
 import Contact, { ContactFooter } from './components/Contact'
 
 const SECTIONS = ['about', 'education', 'research', 'work', 'contact']
@@ -38,8 +38,8 @@ function App() {
         <main id="main-content" className="tab-main">
           <About />
           <Education />
-          <Research />
-          <ExperienceProjects />
+          <ProjectsPublications />
+          <ExperienceOpenSource />
           <Contact />
         </main>
       </div>

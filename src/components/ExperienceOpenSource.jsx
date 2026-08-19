@@ -1,22 +1,20 @@
 import { useState } from 'react'
-import Experience from './Experience'
-import Projects from './Projects'
 import OpenSource from './OpenSource'
+import Experience from './Experience'
 import styles from './ExperienceProjects.module.css'
 
 const tabs = [
   { key: 'opensource', label: 'Open Source' },
   { key: 'experience', label: 'Experience' },
-  { key: 'projects', label: 'Projects' },
 ]
 
-export default function ExperienceProjects() {
+export default function ExperienceOpenSource() {
   const [subtab, setSubtab] = useState('opensource')
 
   return (
     <section id="work" className={styles.section}>
       <div className="container">
-        <p className="section-label">Experience / Projects</p>
+        <p className="section-label">Experience / Open Source</p>
         <h2 className="section-title">What I've worked on.</h2>
 
         <div className={styles.subtabs} role="tablist">
@@ -34,9 +32,8 @@ export default function ExperienceProjects() {
         </div>
 
         <div className={styles.content} role="tabpanel">
-          {subtab === 'experience' && <Experience embedded />}
-          {subtab === 'projects' && <Projects embedded />}
           {subtab === 'opensource' && <OpenSource embedded />}
+          {subtab === 'experience' && <Experience embedded />}
         </div>
       </div>
     </section>

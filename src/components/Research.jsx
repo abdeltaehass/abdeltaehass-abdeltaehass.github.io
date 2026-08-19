@@ -85,8 +85,17 @@ function PaperCard({ paper }) {
   )
 }
 
-export default function Research() {
+export default function Research({ embedded = false }) {
   const ref = useScrollReveal()
+
+  const content = (
+    <div className={styles.list}>
+      {papers.map(p => <PaperCard key={p.title} paper={p} />)}
+    </div>
+  )
+
+  if (embedded) return content
+
   return (
     <section id="research" className={styles.section}>
       <div className={`container reveal`} ref={ref}>
@@ -96,9 +105,7 @@ export default function Research() {
           Open-source audit tools for medical AI — testing demographic
           robustness, agent integrity, and reproducibility.
         </p>
-        <div className={styles.list}>
-          {papers.map(p => <PaperCard key={p.title} paper={p} />)}
-        </div>
+        {content}
       </div>
     </section>
   )
