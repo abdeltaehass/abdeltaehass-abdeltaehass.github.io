@@ -4,12 +4,12 @@ import Research from './Research'
 import styles from './ExperienceProjects.module.css'
 
 const tabs = [
-  { key: 'projects', label: 'Projects' },
   { key: 'publications', label: 'Publications' },
+  { key: 'projects', label: 'Projects' },
 ]
 
 export default function ProjectsPublications() {
-  const [subtab, setSubtab] = useState('projects')
+  const [subtab, setSubtab] = useState('publications')
 
   return (
     <section id="research" className={styles.section}>
