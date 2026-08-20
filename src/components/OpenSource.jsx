@@ -5,7 +5,7 @@ const contributions = [
   {
     repo: 'google/gvisor',
     lang: 'Go',
-    status: 'approved',
+    status: 'merged',
     title: 'docs: select go branch for Go consumers',
     description: 'Diagnosed why `go get gvisor.dev/gvisor@latest` fails for standard Go consumers — master is a Bazel source tree where pkg/refs/refs_template.go declares a mixed package. Established that the project\'s synthetic go branch is the supported consumption path and documented branch selection in the README and SDK quickstart, validated against both the Bazel and go build toolchains.',
     pr: 'https://github.com/google/gvisor/pull/14144',
@@ -25,6 +25,18 @@ const contributions = [
     deletions: 30,
     files: 6,
     commits: 6,
+    merged: 'Aug 2026',
+  },
+  {
+    repo: 'NVIDIA/cccl',
+    lang: 'CUDA C++',
+    status: 'approved',
+    title: '[cudax] Use _CCCL_NO_UNIQUE_ADDRESS instead of [[no_unique_address]]',
+    description: 'Replaced raw [[no_unique_address]] attributes with CCCL\'s _CCCL_NO_UNIQUE_ADDRESS portability macro across cudax STF headers, so empty-member layout optimization applies consistently on compilers that spell or support the attribute differently.',
+    pr: 'https://github.com/NVIDIA/cccl/pull/10881',
+    prNumber: '#10881',
+    files: 4,
+    touched: ['execution_policy.cuh', 'parallel_for_scope.cuh', 'run_once.cuh', 'optionally_static.cuh'],
     merged: 'Aug 2026',
   },
   {
