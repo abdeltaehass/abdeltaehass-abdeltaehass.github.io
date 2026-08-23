@@ -52,6 +52,19 @@ const contributions = [
     commits: 3,
     merged: 'Aug 2026',
   },
+  {
+    repo: 'uber/NullAway',
+    lang: 'Java',
+    title: 'Migrate FrameworkTests to addSourceLines',
+    description: 'A follow-up that applied the same cleanup to NullAway\'s largest remaining test file, covering its Android, RxJava, Java Streams, and Lombok integrations. Each test previously pointed at a separate fixture file elsewhere in the repo, so reading a test meant hunting for its input. I brought that code inline next to the tests that use it and removed 8 now-unused files, making the suite easier to read and change without altering what it verifies.',
+    pr: 'https://github.com/uber/NullAway/pull/1712',
+    prNumber: '#1712',
+    additions: 1375,
+    deletions: 1526,
+    files: 9,
+    commits: 2,
+    merged: 'Aug 2026',
+  },
 ]
 
 function MergeIcon() {
