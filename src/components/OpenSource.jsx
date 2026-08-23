@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 import styles from './OpenSource.module.css'
 
@@ -105,6 +106,14 @@ function CheckIcon() {
   )
 }
 
+function ChevronIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+      <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06L8.53 10.53a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" />
+    </svg>
+  )
+}
+
 const STATUSES = {
   merged: { label: 'Merged', icon: MergeIcon, cls: 'badgeMerged' },
   approved: { label: 'Approved', icon: CheckIcon, cls: 'badgeApproved' },
@@ -183,12 +192,98 @@ function ContributionRow({ item }) {
   )
 }
 
+const ORG_NAMES = {
+  google: 'Google',
+  NVIDIA: 'NVIDIA',
+  uber: 'Uber',
+  elastic: 'Elastic',
+}
+
+// Group contributions by organisation, preserving first-appearance order.
+const groups = (() => {
+  const byOrg = new Map()
+  for (const item of contributions) {
+    const org = item.repo.split('/')[0]
+    if (!byOrg.has(org)) byOrg.set(org, [])
+    byOrg.get(org).push(item)
+  }
+  return [...byOrg.entries()].map(([org, prs]) => ({
+    org,
+    name: ORG_NAMES[org] ?? org,
+    repos: [...new Set(prs.map(p => p.repo.split('/')[1]))],
+    merged: prs.filter(p => (p.status ?? 'merged') === 'merged').length,
+    approved: prs.filter(p => p.status === 'approved').length,
+    prs,
+  }))
+})()
+
+function OrgGroup({ group, open, onToggle }) {
+  const panelId = `os-panel-${group.org}`
+  const btnId = `os-btn-${group.org}`
+
+  return (
+    <div className={`${styles.group} ${open ? styles.groupOpen : ''}`}>
+      <button
+        id={btnId}
+        type="button"
+        className={styles.groupBtn}
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={onToggle}
+      >
+        <span className={styles.orgName}>{group.name}</span>
+        <span className={styles.orgRepos}>{group.repos.join(' · ')}</span>
+        <span className={styles.orgMeta}>
+          <span className={styles.count}>
+            {group.prs.length} {group.prs.length === 1 ? 'PR' : 'PRs'}
+          </span>
+          {group.merged > 0 && (
+            <span className={`${styles.summaryPill} ${styles.summaryMerged}`}>
+              <MergeIcon />
+              {group.merged} merged
+            </span>
+          )}
+          {group.approved > 0 && (
+            <span className={`${styles.summaryPill} ${styles.summaryApproved}`}>
+              <CheckIcon />
+              {group.approved} approved
+            </span>
+          )}
+          <span className={`${styles.chevron} ${open ? styles.chevronOpen : ''}`}>
+            <ChevronIcon />
+          </span>
+        </span>
+      </button>
+
+      {open && (
+        <div id={panelId} role="region" aria-labelledby={btnId} className={styles.panel}>
+          {group.prs.map(c => <ContributionRow key={c.pr} item={c} />)}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function OpenSource({ embedded = false }) {
   const ref = useScrollReveal()
+  const [openOrgs, setOpenOrgs] = useState(() => new Set([groups[0].org]))
+
+  const toggle = org => setOpenOrgs(prev => {
+    const next = new Set(prev)
+    next.has(org) ? next.delete(org) : next.add(org)
+    return next
+  })
 
   const content = (
-    <div className={styles.list}>
-      {contributions.map(c => <ContributionRow key={c.pr} item={c} />)}
+    <div className={styles.groups}>
+      {groups.map(g => (
+        <OrgGroup
+          key={g.org}
+          group={g}
+          open={openOrgs.has(g.org)}
+          onToggle={() => toggle(g.org)}
+        />
+      ))}
     </div>
   )
 
