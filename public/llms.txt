@@ -42,7 +42,7 @@ Portfolio: https://abdelrahmantaeha.com/
 - **NVIDIA CCCL** (approved, PR #10881, Aug 2026 · CUDA C++): A memory-saving optimization in NVIDIA's CUDA headers was written with syntax some compilers ignore, so it quietly did nothing on those platforms. Replaced it with the library's own portable macro so it applies everywhere. https://github.com/NVIDIA/cccl/pull/10881
 - **Uber NullAway** (merged, PR #1694, Aug 2026 · Java): NullAway is Uber's tool that catches null-pointer crashes in Java before code ships. Its tests pulled sample code from scattered files; moved that code inline next to the tests that use it and deleted the obsolete files, keeping coverage identical. https://github.com/uber/NullAway/pull/1694
 - **Uber NullAway** (merged, PR #1712, Aug 2026 · Java): Follow-up applying the same cleanup to NullAway's largest test file, covering its Android, RxJava, Java Streams, and Lombok support. Brought 8 fixture files' worth of sample code inline so each test reads on its own, without changing what the suite verifies. https://github.com/uber/NullAway/pull/1712
-- **Elastic EUI** (approved, PR #9913, Aug 2026 · TypeScript / React): EUI is Elastic's design system, used throughout Kibana. Modernized the date picker's quick-select control from an older React pattern to current hooks, keeping its public API, behavior, and appearance identical. https://github.com/elastic/eui/pull/9913
+- **Elastic EUI** (merged, PR #9913, Aug 2026 · TypeScript / React): EUI is Elastic's design system, used throughout Kibana. Modernized the date picker's quick-select control from an older React pattern to current hooks, keeping its public API, behavior, and appearance identical. https://github.com/elastic/eui/pull/9913
 
 ## Skills
 

@@ -69,7 +69,6 @@ const contributions = [
   {
     repo: 'elastic/eui',
     lang: 'TypeScript / React',
-    status: 'approved',
     title: '[EuiQuickSelect] Migrate from class to function component',
     description: 'EUI is Elastic\'s design system, used throughout Kibana. I modernized the date picker\'s quick-select control from an older React pattern to current hooks, keeping its public API, behavior, and appearance identical so no product using it needs to change.',
     pr: 'https://github.com/elastic/eui/pull/9913',
@@ -77,7 +76,7 @@ const contributions = [
     additions: 196,
     deletions: 196,
     files: 3,
-    commits: 3,
+    commits: 4,
     merged: 'Aug 2026',
   },
 ]
