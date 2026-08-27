@@ -31,7 +31,6 @@ const contributions = [
   {
     repo: 'NVIDIA/cccl',
     lang: 'CUDA C++',
-    status: 'approved',
     title: '[cudax] Use _CCCL_NO_UNIQUE_ADDRESS instead of [[no_unique_address]]',
     description: 'A memory-saving optimization in NVIDIA\'s CUDA headers was written with syntax some compilers ignore, so it quietly did nothing on those platforms. I replaced it with the library\'s own portable macro so it applies everywhere.',
     pr: 'https://github.com/NVIDIA/cccl/pull/10881',
