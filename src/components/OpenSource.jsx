@@ -4,6 +4,20 @@ import styles from './OpenSource.module.css'
 
 const contributions = [
   {
+    repo: 'google/mcp-security',
+    lang: 'Python',
+    status: 'merged',
+    title: 'Fix SecOps rule detection arguments',
+    description: 'MCP Security is Google\'s toolkit that lets AI assistants query Chronicle, its security operations platform. A function that fetched detections for a security rule passed its arguments in the wrong order, so a filter like “only alerting detections” landed in a date field and crashed the request. I corrected the call, exposed the time-range options it had been hiding, and added regression tests.',
+    pr: 'https://github.com/google/mcp-security/pull/283',
+    prNumber: '#283',
+    additions: 86,
+    deletions: 3,
+    files: 2,
+    commits: 1,
+    merged: 'Aug 2026',
+  },
+  {
     repo: 'google/gvisor',
     lang: 'Go',
     status: 'merged',
@@ -167,7 +181,7 @@ function ContributionRow({ item }) {
       <div className={styles.stats}>
         {item.touched ? (
           <>
-            <span className={styles.statMeta}>{item.files} files</span>
+            <span className={styles.statMeta}>{item.files} {item.files === 1 ? 'file' : 'files'}</span>
             <span className={styles.fileList}>
               {item.touched.map(f => (
                 <span key={f} className={styles.file}>{f}</span>
@@ -180,7 +194,8 @@ function ContributionRow({ item }) {
             <span className={styles.deletions}>−{item.deletions.toLocaleString()}</span>
             <DiffBar additions={item.additions} deletions={item.deletions} />
             <span className={styles.statMeta}>
-              {item.files} files · {item.commits} commits
+              {item.files} {item.files === 1 ? 'file' : 'files'} ·{' '}
+              {item.commits} {item.commits === 1 ? 'commit' : 'commits'}
             </span>
           </>
         )}
