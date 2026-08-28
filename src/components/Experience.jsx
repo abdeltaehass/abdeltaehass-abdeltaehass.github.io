@@ -22,7 +22,7 @@ const jobs = [
     ],
   },
   {
-    role: 'Software Engineering Intern — ML',
+    role: 'Software Engineering Intern',
     company: 'District Hut',
     period: 'May 2024 — Jul 2025',
     points: [
